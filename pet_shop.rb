@@ -15,5 +15,34 @@ def add_or_remove_cash(shop, amount)
 end
 
 def pets_sold(shop)
-  shop[:admin][:pets_sold]
+  return shop[:admin][:pets_sold]
+end
+
+def increase_pets_sold(shop, amount)
+  return shop[:admin][:pets_sold] += amount
+end
+
+def stock_count(shop)
+
+  counter = 0
+
+  for animals in shop[:pets]
+    counter += 1
+  end
+
+  return counter
+
+end
+
+def pets_by_breed(shop, breed)
+
+  counter_arr = []
+  pets = shop[:pets]
+
+  for pet in pets
+    counter_arr.push(pet[:name]) if pet[:breed] == breed
+  end
+
+  return counter_arr
+
 end
