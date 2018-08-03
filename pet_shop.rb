@@ -24,13 +24,15 @@ end
 
 def stock_count(shop)
 
-  counter = 0
+  # counter = 0
+  #
+  # for animals in shop[:pets]
+  #   counter += 1
+  # end
+  #
+  # return counter
 
-  for animals in shop[:pets]
-    counter += 1
-  end
-
-  return counter
+  shop[:pets].length
 
 end
 
