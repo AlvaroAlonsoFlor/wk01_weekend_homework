@@ -9,6 +9,11 @@ end
 # If we wanted to improve it we would pass another argument
 # saying add or remove and then the amount
 # that way you don't need to use negative numbers to remove
+
 def add_or_remove_cash(shop, amount)
   return shop[:admin][:total_cash] += amount
+end
+
+def pets_sold(shop)
+  shop[:admin][:pets_sold]
 end
