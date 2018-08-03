@@ -46,3 +46,15 @@ def pets_by_breed(shop, breed)
   return counter_arr
 
 end
+
+def find_pet_by_name(shop, name)
+
+  pets = shop[:pets]
+
+  for pet in pets
+    if pet[:name] == name
+      return pet
+    end
+  end
+
+end
