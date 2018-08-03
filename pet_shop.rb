@@ -109,17 +109,15 @@ def customer_can_afford_pet(customer, new_pet)
 end
 
 def sell_pet_to_customer(shop, new_pet, customer)
+  # if no pet found return nil
   # if enough money customer we transfer pet
-  #   if no pet found return nil
   # to the customer
   # after that we remove money from customer and put on shop
-
+  if new_pet == nil
+    return nil
+  end
 
   if customer_can_afford_pet(customer, new_pet) == true
-
-    if find_pet_by_name(shop, new_pet[:name]) == nil
-      return nil
-    end
 
     add_pet_to_customer(customer, new_pet)
     remove_customer_cash(customer, new_pet[:price])
