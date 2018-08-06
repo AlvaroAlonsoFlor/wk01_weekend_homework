@@ -109,23 +109,27 @@ def customer_can_afford_pet(customer, new_pet)
 end
 
 def sell_pet_to_customer(shop, new_pet, customer)
-  # if no pet found return nil
+  # if no pet found return nil // They don't ask to return that
   # if enough money customer we transfer pet
   # to the customer
   # after that we remove money from customer and put on shop
-  if new_pet == nil
-    return nil
-  end
+
+  return if new_pet == nil # I don't need to return anything
+  # if new_pet == nil
+  #   return nil
+  #   # return find_pet_by_name(shop, new_pet)
+  # end
 
   if customer_can_afford_pet(customer, new_pet) == true
 
     add_pet_to_customer(customer, new_pet)
     remove_customer_cash(customer, new_pet[:price])
+    remove_pet_by_name(shop, new_pet[:name])
     shop[:admin][:total_cash] += new_pet[:price]
     shop[:admin][:pets_sold] += 1
 
   end
 
-  return false
+  # return false # No need to return anything
 
 end
